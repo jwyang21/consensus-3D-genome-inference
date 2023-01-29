@@ -19,7 +19,6 @@ def parse_arguments():
     parser.add_argument('--binsize', required = True, help = 'binsize of binned correlation matrix', default = int(1e6), type = int)
     return parser.parse_args()
 
-
 # ### ToDo
 # #### 1. Make CpG dictionary
 # - key: bin name (chr14:[start_index]-[end_index]
