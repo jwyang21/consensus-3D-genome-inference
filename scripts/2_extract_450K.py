@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import pandas as pd
 import numpy as np
 import os
@@ -11,10 +5,6 @@ import pickle
 import matplotlib.pyplot as plt
 import seaborn as sns
 import argparse
-
-
-# In[2]:
-
 
 def parse_arguments():
     parser = argparse.ArgumentParser()
@@ -26,17 +16,9 @@ def parse_arguments():
     parser.add_argument('--grch', required = True, help = 'GRCh version', default = 36, type = int)
     return parser.parse_args()
 
-
-# In[3]:
-
-
 suppl_fname = 'GPL13534_HumanMethylation450_15017482_v.1.1.csv'
 manifest_fname = 'GPL13534_450K_Manifest_header_Descriptions.xlsx'
 data_fname = 'GSE36369_series_matrix.txt'
-
-
-# In[ ]:
-
 
 if __name__ == '__main__':
     
@@ -99,4 +81,3 @@ if __name__ == '__main__':
     data2_fname = os.path.join(args.save_dir, f'450K-GRCh{args.grch}-chr{args.chrom}-{args.cpg_type}-beta.csv')
     data2.to_csv(data2_fname)
     print(data2_fname)
-
