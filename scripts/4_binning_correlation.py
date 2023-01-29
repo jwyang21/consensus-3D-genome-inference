@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import pandas as pd
 import numpy as np
 import os
@@ -12,10 +6,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from scipy import stats
 import argparse
-
-
-# In[ ]:
-
 
 def parse_arguments():
     parser = argparse.ArgumentParser()
@@ -40,16 +30,9 @@ def parse_arguments():
 # - opensea cg probe가 포함되어 있는 bin들만 고려
 # - bin 1에 포함되어 있는 cg probe들과 bin 2에 포함되어 있는 cg probe들의 all pairwise correlation 값들 --> median --> 이 값이 bin 1과 bin 2 간의 corr.
 
-# In[ ]:
-
-
 suppl_fname = 'GPL13534_HumanMethylation450_15017482_v.1.1.csv'
 manifest_fname = 'GPL13534_450K_Manifest_header_Descriptions.xlsx'
 beta_fname = 'GSE36369_series_matrix.txt'
-
-
-# In[ ]:
-
 
 if __name__ == '__main__':
 
@@ -137,4 +120,3 @@ if __name__ == '__main__':
     binned_corr_df_fname = os.path.join(args.save_dir, f'450K-GRCh{args.grch}-chr{args.chrom}-{args.cpg_type}-corr.binned.csv')
     binned_corr_df.to_csv(binned_corr_df_fname)
     print(binned_corr_df_fname)
-
