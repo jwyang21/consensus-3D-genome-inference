@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import pandas as pd
 import numpy as np
 import os
@@ -11,7 +5,6 @@ import pickle
 import matplotlib.pyplot as plt
 import seaborn as sns
 import argparse
-
 
 # ## ToDo: Specify target chromosome and subregion
 # - chromosome: 1 ~ 22
@@ -26,8 +19,6 @@ import argparse
 # - Coordinate_36: Coordinates genome build 36
 # - Relation_to_UCSC_CpG_Island: Relationship to Canonical CpG Island: Shores - 0-2 kb from CpG island; Shelves - 2-4 kb from CpG island.
 #     - ['N_Shore' 'S_Shelf' nan 'Island' 'S_Shore' 'N_Shelf']
-
-# In[4]:
 
 suppl_fname = 'GPL13534_HumanMethylation450_15017482_v.1.1.csv'
 manifest_fname = 'GPL13534_450K_Manifest_header_Descriptions.xlsx'
@@ -101,4 +92,3 @@ if __name__ == '__main__':
     suppl5_fname = f'450K-GRCh{args.grch}-chr{args.chrom}-{args.cpg_type}.csv'
     suppl5.to_csv(os.path.join(args.save_dir, suppl5_fname))
     print(os.path.join(args.save_dir, suppl5_fname))
-
