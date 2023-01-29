@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[2]:
-
-
 import pandas as pd
 import numpy as np
 import os
@@ -12,7 +6,6 @@ import seaborn as sns
 from scipy import stats
 from sklearn.decomposition import PCA
 import argparse
-
 
 # ## README
 # - input: binned correlation matrices made from Hi-C and 450K, respectively.
@@ -51,9 +44,6 @@ import argparse
 # #### positive values of the eigenvector are associated with the closed compartment
 # - (+) --> B (closed chromatin) // (-) --> A (open chromatin)
 
-# In[1]:
-
-
 def parse_arguments():
     parser = argparse.ArgumentParser()
     parser.add_argument('--chrom', required=True, default = '14', help = 'chromosome-of-interest', type = str)
@@ -64,26 +54,9 @@ def parse_arguments():
     parser.add_argument('--grch', required = True, help = 'GRCh version', default = 36, type = int)
     return parser.parse_args()
 
-
-# In[ ]:
-
-
 suppl_fname = 'GPL13534_HumanMethylation450_15017482_v.1.1.csv'
 manifest_fname = 'GPL13534_450K_Manifest_header_Descriptions.xlsx'
 beta_fname = 'GSE36369_series_matrix.txt'
-
-
-# In[1]:
-
-
-'''
-chrom, working_dir, data_dir, save_dir, cpg_type, grch = 14, '/data/project/jeewon/research/3dith-reproduce', '/data/project/jeewon/research/3dith-reproduce/data', \
-'/data/project/jeewon/research/3dith-reproduce/result', 'opensea', 36
-'''
-
-
-# In[ ]:
-
 
 if __name__ == '__main__':
 
@@ -118,11 +91,7 @@ if __name__ == '__main__':
     binned_corr_hic = pd.read_csv(os.path.join(args.data_dir, binned_corr_hic_fname), skiprows=[0], index_col = 0, sep = '\t')
     binned_corr_hic = binned_corr_hic.iloc[:,:-1].copy()
     
-    ## 1-3. Import CpG information
-    
-    #bin_with_probes_list_npy = os.path.join(args.save_dir, f'bin_with_probes_GRCh{args.grch}_chr{args.chrom}_{args.cpg_type}.npy')
-    #bin_with_probes_list = np.load(bin_with_probes_list_npy)
-    
+    ## 1-3. Import CpG information    
     bin_with_probes_index_npy = os.path.join(args.save_dir, f'bin_with_probes_index_GRCh{args.grch}_chr{args.chrom}_{args.cpg_type}.npy')
     bin_with_probes_index = np.load(bin_with_probes_index_npy)
     
@@ -141,7 +110,6 @@ if __name__ == '__main__':
     suptitle_ = f'Histograms of binned corrmats (chr{args.chrom}, {args.cpg_type})'
     plt.suptitle(suptitle_, fontsize = 15)
     plt.tight_layout()
-    #plt.show()
     hist_fname = os.path.join(args.save_dir, f'Hist_binned_corrmat_GRCh{args.grch}_chr{args.chrom}_{args.cpg_type}.png')
     fig.tight_layout()
     plt.savefig(hist_fname)
@@ -152,17 +120,14 @@ if __name__ == '__main__':
     ## 2-2. Heatmap of binned corrmats from 450K and HiC
     fig = plt.figure(figsize = (7,3.5))
     ax1 = fig.add_subplot(121)
-    #ax1.matshow(binned_corr_450k.values, cmap = 'Reds', vmin = np.min(binned_corr_450k.values.flatten()), vmax = np.max(binned_corr_450k.values.flatten()))
     ax1.matshow(binned_corr_450k.values, cmap = 'Reds')
     ax1.set_title('Heatmap of binned corrmat (450K)')
     ax2 = fig.add_subplot(122)
-    #ax2.matshow(binned_corr_hic2.values, cmap = 'Reds', vmin = np.min(binned_corr_hic2.values.flatten()), vmax = np.max(binned_corr_hic2.values.flatten()))
     ax2.matshow(binned_corr_hic2.values, cmap = 'Reds')
     ax2.set_title('Heatmap of binned corrmat (Hi-C)')
     suptitle_ = f'Histograms of binned corrmats (chr{args.chrom}, {args.cpg_type})'
     plt.suptitle(suptitle_, fontsize = 15)
     plt.tight_layout()
-    #plt.show()
     heatmap_fname = os.path.join(args.save_dir, f'Heatmap_binned_corrmat_GRCh{args.grch}_chr{args.chrom}_{args.cpg_type}.png')
     fig.tight_layout()
     plt.savefig(heatmap_fname)
@@ -213,7 +178,6 @@ if __name__ == '__main__':
     ax.set_ylabel(ylabel)
     scatter_title_ = f'Scatter of PC1 (chr{args.chrom}, {args.cpg_type})'
     ax.set_title(scatter_title_)
-    #plt.show()
     scatter_fname = os.path.join(args.save_dir, f'Scatter_PC1_GRCh{args.grch}_chr{args.chrom}_{args.cpg_type}.png')
     fig.tight_layout()
     plt.savefig(scatter_fname)
@@ -223,24 +187,19 @@ if __name__ == '__main__':
     
     ### 3-2-4. Plot Hi-C PC1 and 450K PC1
     fig = plt.figure(figsize = (7, 3.5))
-
     ax1 = fig.add_subplot(211)
     ax1.plot(pca_hic_pc1)
     ax1.set_title("PC1 from Hi-C")
-
     ax2 = fig.add_subplot(212)
     ax2.plot(pca_450k_pc1_v2)
-
     if sgn == -1:
         title = '(-1) * PC1 from 450K'
     elif sgn == 1:
         title = 'PC1 from 450K'
     ax2.set_title(title)
-
     suptitle_ = f'PC1 (chr{args.chrom}, {args.cpg_type})'
     plt.suptitle(suptitle_ , fontsize = 15)
     plt.tight_layout()
-    #plt.show()
     plot_fname = os.path.join(args.save_dir, f'PC1_chr_{args.chrom}_{args.cpg_type}.png')
     fig.tight_layout()
     plt.savefig(plot_fname)
@@ -258,7 +217,6 @@ if __name__ == '__main__':
     print("Thresholded PCC(HiC PC1, 450k PC1): ")
     print(stats.pearsonr(pca_hic_thresholded, pca_450k_v2_thresholded))
     
-    
     ### 3-2-6. Scatter (thresholded Hi-C PC1, thresholded 450K PC1)
     fig = plt.figure(figsize = (3.5,3.5))
     ax = fig.add_subplot(111)
@@ -273,7 +231,6 @@ if __name__ == '__main__':
 
     title_ = f'Scatter of PC1 (chr{args.chrom}, {args.cpg_type})'
     ax.set_title(title_)
-    #plt.show()
     threshold_plot_fname = os.path.join(args.save_dir, f'Scatter_thresholded_PC1_GRCh{args.grch}_chr{args.chrom}_{args.cpg_type}.png')
     fig.tight_layout()
     plt.savefig(threshold_plot_fname)
@@ -282,7 +239,6 @@ if __name__ == '__main__':
     
     ### 3-2-7. Plot thresholded Hi-C PC1 and 450K PC1
     fig = plt.figure(figsize = (7, 3.5))
-
     ax1 = fig.add_subplot(211)
     ax1.plot(pca_hic_thresholded)
     ax1.set_title("PC1 from Hi-C (thresholded)")
@@ -298,7 +254,6 @@ if __name__ == '__main__':
     suptitle_ = f'Thresholded PC1 (chr{args.chrom}, {args.cpg_type})'
     plt.suptitle(suptitle_, fontsize = 15)
     plt.tight_layout()
-    #plt.show()
     plot_fname = os.path.join(args.save_dir, f'PC1_thresholded_chr_{args.chrom}_{args.cpg_type}.png')
     fig.tight_layout()
     plt.savefig(plot_fname)
@@ -385,9 +340,6 @@ if __name__ == '__main__':
     
     fig = plt.figure(figsize = (7,3.5))
     ax1 = fig.add_subplot(121)
-    #sns.distplot(open_open_450k, kde=True, hist=True, ax = ax1, label = 'Open - Open (450K)')
-    #sns.distplot(open_closed_450k, kde = True, hist=True, ax = ax1, label = 'Open - Closed (450K)')
-    #sns.distplot(closed_closed_450k, kde = True, hist=True, ax = ax1, label = 'Closed - Closed (450K)')
     sns.histplot(open_open_450k, kde=True, ax = ax1, label = 'Open - Open (450K)')
     sns.histplot(open_closed_450k, kde = True, ax = ax1, label = 'Open - Closed (450K)')
     sns.histplot(closed_closed_450k, kde = True, ax = ax1, label = 'Closed - Closed (450K)')
@@ -397,9 +349,6 @@ if __name__ == '__main__':
     ax1.legend()
 
     ax2 = fig.add_subplot(122)
-    #sns.distplot(open_open_hic, kde=True, hist=True, ax = ax2, label = 'Open - Open (Hi-C)')
-    #sns.distplot(open_closed_hic, kde = True, hist=True, ax = ax2, label = 'Open - Closed (Hi-C)')
-    #sns.distplot(closed_closed_hic, kde = True, hist=True, ax = ax2, label = 'Closed - Closed (Hi-C)')
     sns.histplot(open_open_hic, kde=True, ax = ax2, label = 'Open - Open (Hi-C)')
     sns.histplot(open_closed_hic, kde = True, ax = ax2, label = 'Open - Closed (Hi-C)')
     sns.histplot(closed_closed_hic, kde = True, ax = ax2, label = 'Closed - Closed (Hi-C)')
@@ -409,10 +358,8 @@ if __name__ == '__main__':
     ax2.legend()
 
     plt.suptitle('Densities of binned correlations', fontsize = 15)
-    #plt.show()
     figname = f'kde_binned_corr_chr{args.chrom}_{args.cpg_type}.png'
     fig.tight_layout()
     plt.savefig(os.path.join(args.save_dir, figname))
     print(os.path.join(args.save_dir, figname))
     plt.clf()
-
