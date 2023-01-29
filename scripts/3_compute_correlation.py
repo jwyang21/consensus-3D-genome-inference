@@ -46,12 +46,12 @@ if __name__ == '__main__':
     
     # 3. Calculate correlation matrix.
     corr = np.zeros((beta3.shape[0], beta3.shape[0]), dtype = float)
-    for i in range(beta3.shape[0]): #각각의 CpG probe에 대해
+    for i in range(beta3.shape[0]): # Iterate for all CpG probe
         if i % (beta3.shape[0]//10) == 0:
             print("\n===")
             print("Processing {}-th cg probe.".format(i))
         current_cg = beta3.iloc[i,:].values.flatten()
-        for j in range(beta3.shape[0]): #현재 보고 있는 CpG probe - 모든 CpG probe 간 all-pairwise PCC 계산
+        for j in range(beta3.shape[0]): # Compute all-pairwise PCC values between current CpG probe and all CpG probes
             current_probe_cg = beta3.iloc[j,:].values.flatten()
             pearson = stats.pearsonr(current_cg, current_probe_cg)[0]
             corr[i,j] = pearson
