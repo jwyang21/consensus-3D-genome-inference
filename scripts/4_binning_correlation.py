@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import pandas as pd
 import numpy as np
 import os
@@ -11,10 +5,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from scipy import stats
 import argparse
-
-
-# In[ ]:
-
 
 def parse_arguments():
     parser = argparse.ArgumentParser()
@@ -28,7 +18,6 @@ def parse_arguments():
     parser.add_argument('--binsize', required = True, help = 'binsize of binned correlation matrix', default = int(1e5), type = int)
     return parser.parse_args()
 
-
 # ### ToDo
 # #### 1. Make CpG dictionary
 # - key: bin name (chr14:[start_index]-[end_index]
@@ -39,16 +28,9 @@ def parse_arguments():
 # - Only consider bins containing open sea CpG probes
 # - ex) All-pairwise Pearson correlation values between {beta value of CpG probes in bin 1} and {beta value of CpG probes in bin 2} -> compute median -> correlation between bin 1 and bin 2
 
-# In[ ]:
-
-
 suppl_fname = 'GPL13534_HumanMethylation450_15017482_v.1.1.csv'
 manifest_fname = 'GPL13534_450K_Manifest_header_Descriptions.xlsx'
 beta_fname = 'GSE36369_series_matrix.txt'
-
-
-# In[ ]:
-
 
 if __name__ == '__main__':
 
@@ -134,4 +116,3 @@ if __name__ == '__main__':
     binned_corr_df_fname = os.path.join(args.save_dir, f'450K-GRCh{args.grch}-chr{args.chrom}-{args.cpg_type}-corr.binned.csv')
     binned_corr_df.to_csv(binned_corr_df_fname)
     print(binned_corr_df_fname)
-
