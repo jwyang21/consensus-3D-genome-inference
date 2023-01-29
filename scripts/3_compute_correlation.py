@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import pandas as pd
 import numpy as np
 import os
@@ -12,10 +6,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from scipy import stats
 import argparse
-
-
-# In[2]:
-
 
 def parse_arguments():
     parser = argparse.ArgumentParser()
@@ -27,17 +17,9 @@ def parse_arguments():
     parser.add_argument('--grch', required = True, help = 'GRCh version', default = 36, type = int)
     return parser.parse_args()
 
-
-# In[3]:
-
-
 suppl_fname = 'GPL13534_HumanMethylation450_15017482_v.1.1.csv'
 manifest_fname = 'GPL13534_450K_Manifest_header_Descriptions.xlsx'
 beta_fname = 'GSE36369_series_matrix.txt'
-
-
-# In[ ]:
-
 
 if __name__ == '__main__':
 
@@ -78,4 +60,3 @@ if __name__ == '__main__':
     corr_df.to_csv(corr_df_fname)
     print(corr_df_fname)
     assert corr_df.shape[0] == beta3.shape[0] #number of total CpG probes
-
