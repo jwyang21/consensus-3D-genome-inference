@@ -10,7 +10,7 @@
   - Used to infer 3D genome
 - Hi-C data: [GSE18199](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18199) 
   - HiC-EBV-2009
-  - GSE18199_eigenvector_files.zip.gz
+  - GSE18199_binned_heatmaps.zip.gz
   - Not used in 3D genome inference.
   - Used for comparison only.
 ## 3. Installation
