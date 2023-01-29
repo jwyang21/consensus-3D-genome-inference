@@ -24,11 +24,12 @@ def parse_arguments():
 # #### 1. Make CpG dictionary
 # - key: bin name (chr14:[start_index]-[end_index]
 # - dictionary: name of cg probes in this bin
-# - chr14의 어떤 bin에 어떤 opensea cg probe가 있는지 파악   
+# - Find out which open sea CpG probes are in each genomic bin of fixed binsize.   
 # 
 # #### 2. Binning the raw corr. matrix
-# - opensea cg probe가 포함되어 있는 bin들만 고려
-# - bin 1에 포함되어 있는 cg probe들과 bin 2에 포함되어 있는 cg probe들의 all pairwise correlation 값들 --> median --> 이 값이 bin 1과 bin 2 간의 corr.
+# - Only consider bins containing open sea CpG probes
+# - ex) All-pairwise Pearson correlation values between {beta value of CpG probes in bin 1} and {beta value of CpG probes in bin 2} -> compute median -> \
+# -> correlation between bin 1 and bin 2
 
 suppl_fname = 'GPL13534_HumanMethylation450_15017482_v.1.1.csv'
 manifest_fname = 'GPL13534_450K_Manifest_header_Descriptions.xlsx'
