@@ -10,7 +10,7 @@
   - GSE18199_eigenvector_files.zip.gz
 - 450K DNA methylation data: [GSE36369](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE36369)
   - GSE36369_series_matrix.txt.gz
-## 3. Installing environment
+## 3. Installation
 ```shell
 conda env create -f consensus-3d-450k.yaml
 ```
