@@ -17,9 +17,9 @@ conda env create -f consensus-3d-450k.yaml
 ## 4. Run
 ```shell
 cd scripts
-1_list_chr-of-interest_opensea_450K.sh              
-2_extract_450K.sh              
-3_compute_correlation.sh              
-4_binning_correlation.sh               
-5_compare_hic_450k.sh        
+bash 1_list_chr-of-interest_opensea_450K.sh              
+bash 2_extract_450K.sh              
+bash 3_compute_correlation.sh              
+bash 4_binning_correlation.sh               
+bash 5_compare_hic_450k.sh        
 ```
