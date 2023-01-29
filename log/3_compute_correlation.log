@@ -1,0 +1,33 @@
+python3 3_compute_correlation.py --chrom 14 -w_dir /data/project/jeewon/research/3dith-reproduce -d_dir /data/project/jeewon/research/3dith-reproduce/data -s_dir /data/project/jeewon/research/3dith-reproduce/result --cpg_type opensea --grch 36
+/data/project/jeewon/research/3dith-reproduce/result/450K-GRCh36-chr14-opensea-beta.cleaned.csv
+
+===
+Processing 0-th cg probe.
+
+===
+Processing 522-th cg probe.
+
+===
+Processing 1044-th cg probe.
+
+===
+Processing 1566-th cg probe.
+
+===
+Processing 2088-th cg probe.
+
+===
+Processing 2610-th cg probe.
+
+===
+Processing 3132-th cg probe.
+
+===
+Processing 3654-th cg probe.
+
+===
+Processing 4176-th cg probe.
+
+===
+Processing 4698-th cg probe.
+/data/project/jeewon/research/3dith-reproduce/result/450K-GRCh36-chr14-opensea-corr.csv

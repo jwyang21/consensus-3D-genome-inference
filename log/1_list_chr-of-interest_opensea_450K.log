@@ -1,0 +1,2 @@
+python3 1_list_chr-of-interest_opensea_450K.py --chrom 14 -w_dir /data/project/jeewon/research/3dith-reproduce -d_dir /data/project/jeewon/research/3dith-reproduce/data -s_dir /data/project/jeewon/research/3dith-reproduce/result --cpg_type opensea --grch 36
+/data/project/jeewon/research/3dith-reproduce/result/450K-GRCh36-chr14-opensea.csv

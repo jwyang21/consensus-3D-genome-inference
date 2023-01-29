@@ -1,0 +1,12 @@
+python3 2_extract_450K.py --chrom 14 -w_dir /data/project/jeewon/research/3dith-reproduce -d_dir /data/project/jeewon/research/3dith-reproduce/data -s_dir /data/project/jeewon/research/3dith-reproduce/result --cpg_type opensea --grch 36
+---
+450K beta value data: 
+             "GSM924611" "GSM924612"  ... "GSM1023141" "GSM1023142"
+"cg00000029"   0.1585177   0.4426483  ...    0.5569537      0.47196
+"cg00000108"   0.8714845   0.9346234  ...    0.8652841    0.1340399
+"cg00000109"   0.6090706   0.9246376  ...     0.839954    0.8050045
+
+[3 rows x 322 columns]
+(485577, 322)
+/data/project/jeewon/research/3dith-reproduce/result/450K-GRCh36-beta.csv
+/data/project/jeewon/research/3dith-reproduce/result/450K-GRCh36-chr14-opensea-beta.csv
