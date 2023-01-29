@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[134]:
-
-
 import pandas as pd
 import numpy as np
 import os
@@ -13,7 +7,6 @@ import seaborn as sns
 from scipy import stats
 from sklearn.decomposition import PCA
 import argparse
-
 
 # ## README
 # - input: binned correlation matrices made from Hi-C and 450K, respectively.
@@ -49,11 +42,8 @@ import argparse
 # - pca_hic_thresholded
 # - pca_450k_v2_thresholded
 
-# #### positive values of the eigenvector are associated with the closed compartment
-# - (+) --> B (closed chromatin) // (-) --> A (open chromatin)
-
-# In[1]:
-
+# positive values of the eigenvector are associated with the closed compartment
+## (+) --> B (closed chromatin) // (-) --> A (open chromatin)
 
 def parse_arguments():
     parser = argparse.ArgumentParser()
@@ -65,17 +55,9 @@ def parse_arguments():
     parser.add_argument('--grch', required = True, help = 'GRCh version', default = 36, type = int)
     return parser.parse_args()
 
-
-# In[ ]:
-
-
 suppl_fname = 'GPL13534_HumanMethylation450_15017482_v.1.1.csv'
 manifest_fname = 'GPL13534_450K_Manifest_header_Descriptions.xlsx'
 beta_fname = 'GSE36369_series_matrix.txt'
-
-
-# In[ ]:
-
 
 if __name__ == '__main__':
 
@@ -393,4 +375,3 @@ if __name__ == '__main__':
     figname = f'kde_binned_corr_chr{args.chrom}_{args.cpg_type}.png'
     plt.savefig(os.path.join(args.save_dir, figname))
     print(os.path.join(args.save_dir, figname))
-
