@@ -46,7 +46,7 @@ if __name__ == '__main__':
     
     # 3. Calculate correlation matrix.
     corr = np.zeros((beta3.shape[0], beta3.shape[0]), dtype = float)
-    for i in range(beta3.shape[0]): # Iterate for all CpG probe
+    for i in range(beta3.shape[0]): # Iterate for all CpG probes
         if i % (beta3.shape[0]//10) == 0:
             print("\n===")
             print("Processing {}-th cg probe.".format(i))
