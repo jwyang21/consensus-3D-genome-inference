@@ -93,7 +93,7 @@ if __name__ == '__main__':
     binned_corr_hic = binned_corr_hic.iloc[:,:-1].copy()
     
     ## 1-3. Import CpG information
-    bin_with_probes_list_pickle = os.path.join(args.save_dir, f'bin_with_probes_list_GRCh{args.grch}_chr{args.chrom}_{args.cpg_type}.pickle')'
+    bin_with_probes_list_pickle = os.path.join(args.save_dir, f'bin_with_probes_list_GRCh{args.grch}_chr{args.chrom}_{args.cpg_type}.pickle')
     with open(bin_with_probes_list_pickle, 'rb') as f2:
         bin_with_probes_list = pickle.load(f2)
     f2.close()
