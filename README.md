@@ -8,4 +8,5 @@
 - Hi-C data: [GSE18199](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18199) 
   - HiC-EBV-2009
   - GSE18199_eigenvector_files.zip.gz
-- 450K DNA methylation data: GSE36369 (EBV)
+- 450K DNA methylation data: [GSE36369](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE36369)
+  - GSE36369_series_matrix.txt.gz
