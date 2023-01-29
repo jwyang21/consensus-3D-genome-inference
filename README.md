@@ -18,11 +18,12 @@
 conda env create -f consensus-3d-450k.yaml
 ```
 ## 4. Run
+- Making log files is not mandatory.  
 ```shell
 cd scripts
-bash 1_list_chr-of-interest_opensea_450K.sh              
-bash 2_extract_450K.sh              
-bash 3_compute_correlation.sh              
-bash 4_binning_correlation.sh               
-bash 5_compare_hic_450k.sh        
+bash 1_list_chr-of-interest_opensea_450K.sh > ../log/1_list_chr-of-interest_opensea_450K.log           
+bash 2_extract_450K.sh > ../log/2_extract_450K.log         
+bash 3_compute_correlation.sh > ../log/3_compute_correlation.log       
+bash 4_binning_correlation.sh > ../log/4_binning_correlation.log        
+bash 5_compare_hic_450k.sh > ../log/5_compare_hic_450k.log       
 ```
