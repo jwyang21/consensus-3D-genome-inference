@@ -19,6 +19,8 @@ conda env create -f consensus-3d-450k.yaml
 ```
 ## 4. Run
 - Making log files is not mandatory.  
+- Commands below are for chromosome 14 and open sea CpG probes. 
+  - Values of variables 'chrom' and 'cpg\_type' in shell scripts can be edited to analyze other chromosome and/or other CpG probes.
 ```shell
 cd scripts
 bash 1_list_chr-of-interest_opensea_450K.sh > ../log/1_list_chr-of-interest_opensea_450K.log           
