@@ -1,0 +1,302 @@
+python3 5_compare_hic_450K.py --chrom 14 -w_dir /data/project/jeewon/research/3dith-reproduce -d_dir /data/project/jeewon/research/3dith-reproduce/data -s_dir /data/project/jeewon/research/3dith-reproduce/result --cpg_type opensea --grch 36
+hist_fname:  /data/project/jeewon/research/3dith-reproduce/result/Hist_binned_corrmat_GRCh36_chr14_opensea.png
+
+
+heatmap_fname:  /data/project/jeewon/research/3dith-reproduce/result/Heatmap_binned_corrmat_GRCh36_chr14_opensea.png
+
+
+Multiply (-1) to 450k PC1 vector.
+Unthresholded PCC(HiC PC1, 450k PC1): PearsonRResult(statistic=0.6576239542273636, pvalue=1.353072060602522e-93)
+
+
+scatter_fname:  /data/project/jeewon/research/3dith-reproduce/result/Scatter_PC1_GRCh36_chr14_opensea.png
+
+
+plot_fname:  /data/project/jeewon/research/3dith-reproduce/result/PC1_chr_14_opensea.png
+
+
+Thresholded PCC(HiC PC1, 450k PC1): 
+PearsonRResult(statistic=0.6576934672259575, pvalue=2.248579571191446e-93)
+/data/project/jeewon/research/3dith-reproduce/result/Scatter_thresholded_PC1_GRCh36_chr14_opensea.png
+threshold_plot_fname:  /data/project/jeewon/research/3dith-reproduce/result/PC1_thresholded_chr_14_opensea.png
+
+
+A/B agreement between 450K and Hi-C:  0.7627345844504021
+
+
+============================================================
+Processing 0-th bin
+
+Processing 0-th probe bin
+
+Processing 74-th probe bin
+
+Processing 148-th probe bin
+
+Processing 222-th probe bin
+
+Processing 296-th probe bin
+
+Processing 370-th probe bin
+
+Processing 444-th probe bin
+
+Processing 518-th probe bin
+
+Processing 592-th probe bin
+
+Processing 666-th probe bin
+
+Processing 740-th probe bin
+============================================================
+Processing 74-th bin
+
+Processing 0-th probe bin
+
+Processing 74-th probe bin
+
+Processing 148-th probe bin
+
+Processing 222-th probe bin
+
+Processing 296-th probe bin
+
+Processing 370-th probe bin
+
+Processing 444-th probe bin
+
+Processing 518-th probe bin
+
+Processing 592-th probe bin
+
+Processing 666-th probe bin
+
+Processing 740-th probe bin
+============================================================
+Processing 148-th bin
+
+Processing 0-th probe bin
+
+Processing 74-th probe bin
+
+Processing 148-th probe bin
+
+Processing 222-th probe bin
+
+Processing 296-th probe bin
+
+Processing 370-th probe bin
+
+Processing 444-th probe bin
+
+Processing 518-th probe bin
+
+Processing 592-th probe bin
+
+Processing 666-th probe bin
+
+Processing 740-th probe bin
+============================================================
+Processing 222-th bin
+
+Processing 0-th probe bin
+
+Processing 74-th probe bin
+
+Processing 148-th probe bin
+
+Processing 222-th probe bin
+
+Processing 296-th probe bin
+
+Processing 370-th probe bin
+
+Processing 444-th probe bin
+
+Processing 518-th probe bin
+
+Processing 592-th probe bin
+
+Processing 666-th probe bin
+
+Processing 740-th probe bin
+============================================================
+Processing 296-th bin
+
+Processing 0-th probe bin
+
+Processing 74-th probe bin
+
+Processing 148-th probe bin
+
+Processing 222-th probe bin
+
+Processing 296-th probe bin
+
+Processing 370-th probe bin
+
+Processing 444-th probe bin
+
+Processing 518-th probe bin
+
+Processing 592-th probe bin
+
+Processing 666-th probe bin
+
+Processing 740-th probe bin
+============================================================
+Processing 370-th bin
+
+Processing 0-th probe bin
+
+Processing 74-th probe bin
+
+Processing 148-th probe bin
+
+Processing 222-th probe bin
+
+Processing 296-th probe bin
+
+Processing 370-th probe bin
+
+Processing 444-th probe bin
+
+Processing 518-th probe bin
+
+Processing 592-th probe bin
+
+Processing 666-th probe bin
+
+Processing 740-th probe bin
+============================================================
+Processing 444-th bin
+
+Processing 0-th probe bin
+
+Processing 74-th probe bin
+
+Processing 148-th probe bin
+
+Processing 222-th probe bin
+
+Processing 296-th probe bin
+
+Processing 370-th probe bin
+
+Processing 444-th probe bin
+
+Processing 518-th probe bin
+
+Processing 592-th probe bin
+
+Processing 666-th probe bin
+
+Processing 740-th probe bin
+============================================================
+Processing 518-th bin
+
+Processing 0-th probe bin
+
+Processing 74-th probe bin
+
+Processing 148-th probe bin
+
+Processing 222-th probe bin
+
+Processing 296-th probe bin
+
+Processing 370-th probe bin
+
+Processing 444-th probe bin
+
+Processing 518-th probe bin
+
+Processing 592-th probe bin
+
+Processing 666-th probe bin
+
+Processing 740-th probe bin
+============================================================
+Processing 592-th bin
+
+Processing 0-th probe bin
+
+Processing 74-th probe bin
+
+Processing 148-th probe bin
+
+Processing 222-th probe bin
+
+Processing 296-th probe bin
+
+Processing 370-th probe bin
+
+Processing 444-th probe bin
+
+Processing 518-th probe bin
+
+Processing 592-th probe bin
+
+Processing 666-th probe bin
+
+Processing 740-th probe bin
+============================================================
+Processing 666-th bin
+
+Processing 0-th probe bin
+
+Processing 74-th probe bin
+
+Processing 148-th probe bin
+
+Processing 222-th probe bin
+
+Processing 296-th probe bin
+
+Processing 370-th probe bin
+
+Processing 444-th probe bin
+
+Processing 518-th probe bin
+
+Processing 592-th probe bin
+
+Processing 666-th probe bin
+
+Processing 740-th probe bin
+============================================================
+Processing 740-th bin
+
+Processing 0-th probe bin
+
+Processing 74-th probe bin
+
+Processing 148-th probe bin
+
+Processing 222-th probe bin
+
+Processing 296-th probe bin
+
+Processing 370-th probe bin
+
+Processing 444-th probe bin
+
+Processing 518-th probe bin
+
+Processing 592-th probe bin
+
+Processing 666-th probe bin
+
+Processing 740-th probe bin
+Number of entries from each compartment-compartment binned correlations: 
+open_open_450k:  123904
+open_closed_450k:  277376
+closed_closed_450k:  155236
+total 450k:  556516
+open_open_hic:  180625
+open_closed_hic:  272850
+closed_closed_hic:  103041
+total hic:  556516
+
+
+/data/project/jeewon/research/3dith-reproduce/result/kde_binned_corr_chr14_opensea.png
